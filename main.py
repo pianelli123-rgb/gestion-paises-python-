@@ -1,7 +1,7 @@
 # main.py
 # Punto de entrada y menú principal
 # TPI Programación 1 - UTN TUPAD 168 2026
-# Autores: Lucas Pianelli, EZEQUIEL GOMEZ
+# Autores: Lucas Pianelli, Ezequiel Gomez
 
 from datos import cargar_paises, guardar_paises, mostrar_paises
 from validaciones import agregar_pais, actualizar_pais
@@ -11,17 +11,17 @@ from estadisticas import estadisticas
 
 
 def mostrar_menu():
-    print("\n=== Gestión de Datos de Países ===")
-    print("1. Mostrar todos los países")
-    print("2. Agregar un país")
-    print("3. Actualizar un país")
+    print("Gestion de Datos de Paises")
+    print("1. Mostrar todos los paises")
+    print("2. Agregar un pais")
+    print("3. Actualizar un pais")
     print("4. Filtrar por continente")
-    print("5. Filtrar por población mínima")
-    print("6. Filtrar por superficie mínima")
+    print("5. Filtrar por poblacion minima")
+    print("6. Filtrar por superficie minima")
     print("7. Ordenar por nombre")
-    print("8. Ordenar por población")
+    print("8. Ordenar por poblacion")
     print("9. Ordenar por superficie")
-    print("10. Ver estadísticas")
+    print("10. Ver estadisticas")
     print("0. Salir")
 
 
@@ -30,8 +30,7 @@ def main():
 
     while True:
         mostrar_menu()
-
-        opcion = input("\nElegí una opción: ").strip()
+        opcion = input("Elegi una opcion: ").strip()
 
         if opcion == "1":
             mostrar_paises(paises)
@@ -56,10 +55,10 @@ def main():
         elif opcion == "10":
             estadisticas(paises)
         elif opcion == "0":
-            print("Saliendo del programa. ¡Hasta luego!")
+            print("Saliendo del programa.")
             break
         else:
-            print("Opción no válida. Ingresá un número del 0 al 10.")
+            print("Opcion no valida. Ingresa un numero del 0 al 10.")
 
 
 main()
