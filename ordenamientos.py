@@ -16,23 +16,23 @@ def obtener_superficie(p):
 
 def ordenar_nombre(paises):
     resultado = sorted(paises, key=obtener_nombre)
-    print("Países ordenados por nombre (A-Z):")
+    print("Paises ordenados por nombre:")
     for p in resultado:
-        print(f"  - {p['nombre']}")
+        print(f"  {p['nombre']}")
     return resultado
 
 
 def ordenar_poblacion(paises):
     resultado = sorted(paises, key=obtener_poblacion, reverse=True)
-    print("Países ordenados por población (mayor a menor):")
+    print("Paises ordenados por poblacion (mayor a menor):")
     for p in resultado:
-        print(f"  - {p['nombre']}: {p['poblacion']} hab.")
+        print(f"  {p['nombre']}: {p['poblacion']} hab.")
     return resultado
 
 
 def ordenar_superficie(paises):
     resultado = sorted(paises, key=obtener_superficie, reverse=True)
-    print("Países ordenados por superficie (mayor a menor):")
+    print("Paises ordenados por superficie (mayor a menor):")
     for p in resultado:
-        print(f"  - {p['nombre']}: {p['superficie']} km²")
+        print(f"  {p['nombre']}: {p['superficie']} km2")
     return resultado
