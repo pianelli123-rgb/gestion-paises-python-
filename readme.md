@@ -3,7 +3,7 @@
 **Trabajo Práctico Integrador — Programación 1**  
 UTN TUPAD | 2C 2025
 
-**Autores:** Lucas Pianelli · Ezequiel Rodríguez
+**Autores:** Lucas Pianelli · Ezequiel Gómez
 
 ---
 
