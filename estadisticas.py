@@ -13,7 +13,7 @@ def obtener_superficie(p):
 
 def estadisticas(paises):
     if len(paises) == 0:
-        print("No hay países cargados.")
+        print("No hay paises cargados.")
         return
 
     total_poblacion = sum(int(p["poblacion"]) for p in paises)
@@ -34,16 +34,16 @@ def estadisticas(paises):
         else:
             continentes[c] = 1
 
-    print("=== Estadísticas generales ===")
-    print(f"Total de países: {len(paises)}")
-    print(f"Población total: {total_poblacion}")
-    print(f"Superficie total: {total_superficie} km²")
-    print(f"Población promedio: {promedio_poblacion} hab.")
-    print(f"Superficie promedio: {promedio_superficie} km²")
-    print(f"País más poblado: {mas_poblado['nombre']} ({mas_poblado['poblacion']} hab.)")
-    print(f"País menos poblado: {menos_poblado['nombre']} ({menos_poblado['poblacion']} hab.)")
-    print(f"País más grande: {mas_grande['nombre']} ({mas_grande['superficie']} km²)")
-    print(f"País más pequeño: {mas_chico['nombre']} ({mas_chico['superficie']} km²)")
-    print("Países por continente:")
+    print("Estadisticas generales")
+    print(f"Total de paises: {len(paises)}")
+    print(f"Poblacion total: {total_poblacion}")
+    print(f"Superficie total: {total_superficie} km2")
+    print(f"Poblacion promedio: {promedio_poblacion} hab.")
+    print(f"Superficie promedio: {promedio_superficie} km2")
+    print(f"Pais mas poblado: {mas_poblado['nombre']} ({mas_poblado['poblacion']} hab.)")
+    print(f"Pais menos poblado: {menos_poblado['nombre']} ({menos_poblado['poblacion']} hab.)")
+    print(f"Pais mas grande: {mas_grande['nombre']} ({mas_grande['superficie']} km2)")
+    print(f"Pais mas pequeño: {mas_chico['nombre']} ({mas_chico['superficie']} km2)")
+    print("Paises por continente:")
     for c in sorted(continentes):
-        print(f"  - {c}: {continentes[c]}")
+        print(f"  {c}: {continentes[c]}")
