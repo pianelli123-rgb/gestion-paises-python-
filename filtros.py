@@ -5,75 +5,72 @@
 
 
 def filtrar_continente(paises):
-    """Filtra y muestra los países de un continente ingresado por el usuario."""
-    continentes_disponibles = sorted(set(p["continente"] for p in paises))
+    continentes = set()
+    for p in paises:
+        continentes.add(p["continente"])
 
-    print("\n--- Filtrar por Continente ---")
     print("Continentes disponibles:")
-    for c in continentes_disponibles:
-        print(f"  - {c}")
+    for c in sorted(continentes):
+        print(f"  {c}")
 
-    continente = input("\nIngresá el continente: ").strip().capitalize()
+    continente = input("Ingresa el continente: ")
 
-    resultado = [p for p in paises if p["continente"].lower() == continente.lower()]
+    resultado = []
+    for p in paises:
+        if p["continente"].lower() == continente.lower():
+            resultado.append(p)
 
-    if resultado:
-        print(f"\nPaíses en {continente} ({len(resultado)} encontrados):")
-        print(f"{'Nombre':<20} {'Población':>15} {'Superficie (km²)':>18}")
-        print("-" * 55)
-        for p in resultado:
-            print(f"{p['nombre']:<20} {int(p['poblacion']):>15,} {int(p['superficie']):>18,}")
+    if len(resultado) == 0:
+        print(f"No se encontraron paises en {continente}.")
     else:
-        print(f"\nNo se encontraron países en el continente '{continente}'.")
+        print(f"Paises en {continente}:")
+        for p in resultado:
+            print(f"  {p['nombre']}")
 
     return resultado
 
 
 def filtrar_poblacion(paises):
-    """Filtra y muestra los países con población mayor a un valor ingresado."""
-    print("\n--- Filtrar por Población Mínima ---")
-
     while True:
         try:
-            minimo = int(input("Ingresá la población mínima: ").strip())
+            minimo = int(input("Ingresa la poblacion minima: "))
             break
         except ValueError:
-            print("Error: ingresá un número entero válido.")
+            print("Error: ingresa un numero valido.")
 
-    resultado = [p for p in paises if int(p["poblacion"]) >= minimo]
+    resultado = []
+    for p in paises:
+        if int(p["poblacion"]) >= minimo:
+            resultado.append(p)
 
-    if resultado:
-        print(f"\nPaíses con población >= {minimo:,} ({len(resultado)} encontrados):")
-        print(f"{'Nombre':<20} {'Población':>15} {'Continente':>12}")
-        print("-" * 50)
-        for p in sorted(resultado, key=lambda x: int(x["poblacion"]), reverse=True):
-            print(f"{p['nombre']:<20} {int(p['poblacion']):>15,} {p['continente']:>12}")
+    if len(resultado) == 0:
+        print("No se encontraron paises con esa poblacion minima.")
     else:
-        print(f"\nNo se encontraron países con población mayor a {minimo:,}.")
+        print(f"Paises con poblacion mayor o igual a {minimo}:")
+        for p in resultado:
+            print(f"  {p['nombre']}: {p['poblacion']} hab.")
 
     return resultado
 
 
 def filtrar_superficie(paises):
-    """Filtra y muestra los países con superficie mayor a un valor ingresado."""
-    print("\n--- Filtrar por Superficie Mínima ---")
-
     while True:
         try:
-            minimo = int(input("Ingresá la superficie mínima (km²): ").strip())
+            minimo = int(input("Ingresa la superficie minima en km2: "))
             break
         except ValueError:
-            print("Error: ingresá un número entero válido.")
+            print("Error: ingresa un numero valido.")
 
-    resultado = [p for p in paises if int(p["superficie"]) >= minimo]
+    resultado = []
+    for p in paises:
+        if int(p["superficie"]) >= minimo:
+            resultado.append(p)
 
-    if resultado:
-        print(f"\nPaíses con superficie >= {minimo:,} km² ({len(resultado)} encontrados):")
-        print(f"{'Nombre':<20} {'Superficie (km²)':>18} {'Continente':>12}")
-        print("-" * 52)
-        for p in sorted(resultado, key=lambda x: int(x["superficie"]), reverse=True):
-            print(f"{p['nombre']:<20} {int(p['superficie']):>18,} {p['continente']:>12}")
+    if len(resultado) == 0:
+        print("No se encontraron paises con esa superficie minima.")
     else:
-        print(f"\nNo se encontraron países con superficie mayor a {minimo:,} km².")
+        print(f"Paises con superficie mayor o igual a {minimo} km2:")
+        for p in resultado:
+            print(f"  {p['nombre']}: {p['superficie']} km2")
 
     return resultado
