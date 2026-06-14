@@ -1,7 +1,7 @@
 # Gestión de Datos de Países 🌍
 
 **Trabajo Práctico Integrador — Programación 1**  
-UTN TUPAD | 2C 2025
+UTN TUPAD | 168 2026 
 
 **Autores:** Lucas Pianelli · Ezequiel Gómez
 
