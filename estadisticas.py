@@ -1,6 +1,6 @@
 # estadisticas.py
 # Módulo de estadísticas de países
-# TPI Programación 1 - UTN TUPAD 2C 2025
+# TPI Programación 1 - UTN TUPAD 168 2026
 # Autor: Lucas Pianelli
 
 
