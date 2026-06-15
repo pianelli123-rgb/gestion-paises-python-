@@ -2,6 +2,7 @@
 # Módulo de filtrado de países
 # TPI Programación 1 - UTN TUPAD 168 2026
 # Autor: Lucas Pianelli
+# Correciones: Ezequiel Gómez
 
 
 def filtrar_continente(paises):
@@ -33,20 +34,29 @@ def filtrar_continente(paises):
 def filtrar_poblacion(paises):
     while True:
         try:
-            minimo = int(input("Ingresa la poblacion minima: "))
-            break
+            minimo = int(input("Ingresa la población mínima: "))
+            maximo = int(input("Ingresa la población máxima: "))
+
+            if minimo > maximo:
+                print("Error: la población mínima no puede ser mayor que la máxima.")
+            else:
+                break
+
         except ValueError:
-            print("Error: ingresa un numero valido.")
+            print("Error: ingresa números válidos.")
 
     resultado = []
+
     for p in paises:
-        if int(p["poblacion"]) >= minimo:
+        poblacion = int(p["poblacion"])
+
+        if minimo <= poblacion <= maximo:
             resultado.append(p)
 
     if len(resultado) == 0:
-        print("No se encontraron paises con esa poblacion minima.")
+        print("No se encontraron países en ese rango de población.")
     else:
-        print(f"Paises con poblacion mayor o igual a {minimo}:")
+        print(f"Países con población entre {minimo} y {maximo}:")
         for p in resultado:
             print(f"  {p['nombre']}: {p['poblacion']} hab.")
 
