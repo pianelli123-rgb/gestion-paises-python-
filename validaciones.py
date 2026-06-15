@@ -1,5 +1,5 @@
 # Validaciones.py
-# Módulo de estadísticas de países
+# Módulo de validaciones de países
 # TPI Programación 1 - UTN TUPAD 168 2026
 # Autor: Ezequiel Gómez
 
