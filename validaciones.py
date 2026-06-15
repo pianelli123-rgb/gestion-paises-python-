@@ -36,7 +36,8 @@ def agregar_pais(paises):
     for pais in paises:
         if pais["nombre"].lower() == nombre.lower():
             print("Ese país ya existe.")
-            return
+            return paises
+
 
     poblacion = validar_entero_positivo("Población: ")
     superficie = validar_entero_positivo("Superficie (km²): ")
