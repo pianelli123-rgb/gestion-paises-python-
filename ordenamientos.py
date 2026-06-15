@@ -12,7 +12,13 @@ def obtener_poblacion(p):
 
 def obtener_superficie(p):
     return int(p["superficie"])
+    
+def buscar_pais(paises):
+    texto = input("Nombre: ").lower()
 
+    for p in paises:
+        if texto in p["nombre"].lower():
+            print(p)
 
 def ordenar_nombre(paises):
     resultado = sorted(paises, key=obtener_nombre)
