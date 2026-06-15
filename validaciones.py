@@ -1,4 +1,4 @@
-# estadisticas.py
+# Validaciones.py
 # Módulo de estadísticas de países
 # TPI Programación 1 - UTN TUPAD 168 2026
 # Autor: Ezequiel Gómez
@@ -52,7 +52,7 @@ def agregar_pais(paises):
     paises.append(nuevo_pais)
 
     print("País agregado correctamente.")
-return paises
+    return paises
 
 def actualizar_pais(paises):
     print("\n=== Actualizar país ===")
@@ -73,7 +73,7 @@ def actualizar_pais(paises):
             )
 
             print("Datos actualizados correctamente.")
-        return paises
+            return paises
 
     print("No se encontró el país.")
-return paises
+    return paises
