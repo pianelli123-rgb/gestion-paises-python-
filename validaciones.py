@@ -73,7 +73,7 @@ def actualizar_pais(paises):
             )
 
             print("Datos actualizados correctamente.")
-            return
+        return paises
 
     print("No se encontró el país.")
 return paises
