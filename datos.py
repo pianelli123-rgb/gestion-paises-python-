@@ -6,6 +6,7 @@
 
 def cargar_paises():
     paises = []
+
     try:
         archivo = open("data/paises.csv", "r", encoding="utf-8")
         lineas = archivo.readlines()
@@ -13,15 +14,27 @@ def cargar_paises():
 
         for i in range(1, len(lineas)):
             linea = lineas[i].strip()
+
             if linea != "":
                 partes = linea.split(",")
-                pais = {
-                    "nombre": partes[0],
-                    "poblacion": partes[1],
-                    "superficie": partes[2],
-                    "continente": partes[3]
-                }
-                paises.append(pais)
+
+                # Verificar que tenga las 4 columnas
+                if len(partes) != 4:
+                    print(f"Error en la línea {i + 1}: formato incorrecto.")
+                    continue
+
+                try:
+                    pais = {
+                        "nombre": partes[0],
+                        "poblacion": int(partes[1]),
+                        "superficie": int(partes[2]),
+                        "continente": partes[3]
+                    }
+
+                    paises.append(pais)
+
+                except ValueError:
+                    print(f"Error en la línea {i + 1}: población o superficie inválida.")
 
         print(f"Se cargaron {len(paises)} países correctamente.")
 
