@@ -52,7 +52,7 @@ def agregar_pais(paises):
     paises.append(nuevo_pais)
 
     print("País agregado correctamente.")
-
+return paises
 
 def actualizar_pais(paises):
     print("\n=== Actualizar país ===")
@@ -76,3 +76,4 @@ def actualizar_pais(paises):
             return
 
     print("No se encontró el país.")
+return paises
