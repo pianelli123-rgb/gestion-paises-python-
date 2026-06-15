@@ -6,8 +6,9 @@
 from datos import cargar_paises, guardar_paises, mostrar_paises
 from validaciones import agregar_pais, actualizar_pais
 from filtros import filtrar_continente, filtrar_poblacion, filtrar_superficie
-from ordenamientos import ordenar_nombre, ordenar_poblacion, ordenar_superficie
+from ordenamientos import ordenar_nombre, ordenar_poblacion, ordenar_superficie,buscar_pais
 from estadisticas import estadisticas
+
 
 
 def mostrar_menu():
@@ -16,12 +17,13 @@ def mostrar_menu():
     print("2. Agregar un pais")
     print("3. Actualizar un pais")
     print("4. Filtrar por continente")
-    print("5. Filtrar por rango de población")
-    print("6. Filtrar por rango de superficie")
-    print("7. Ordenar por nombre")
-    print("8. Ordenar por poblacion")
-    print("9. Ordenar por superficie")
-    print("10. Ver estadisticas")
+    print("5. Buscar Pais")
+    print("6. Filtrar por rango de población")
+    print("7. Filtrar por rango de superficie")
+    print("8. Ordenar por nombre")
+    print("9. Ordenar por poblacion")
+    print("10. Ordenar por superficie")
+    print("11. Ver estadisticas")
     print("0. Salir")
 
 
@@ -43,16 +45,18 @@ def main():
         elif opcion == "4":
             filtrar_continente(paises)
         elif opcion == "5":
-            filtrar_poblacion(paises)
+            buscar_pais(paises)
         elif opcion == "6":
-            filtrar_superficie(paises)
+            filtrar_poblacion(paises)
         elif opcion == "7":
-            ordenar_nombre(paises)
+            filtrar_superficie(paises)
         elif opcion == "8":
-            ordenar_poblacion(paises)
+            ordenar_nombre(paises)
         elif opcion == "9":
-            ordenar_superficie(paises)
+            ordenar_poblacion(paises)
         elif opcion == "10":
+            ordenar_superficie(paises)
+        elif opcion == "11":
             estadisticas(paises)
         elif opcion == "0":
             print("Saliendo del programa.")
