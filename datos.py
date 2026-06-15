@@ -1,7 +1,7 @@
 # datos.py
 # Módulo de carga y gestión de datos
 # TPI Programación 1 - UTN TUPAD 168 2026
-# Autor: 
+# Autor: Ezequiel Gómez
 
 
 def cargar_paises():
