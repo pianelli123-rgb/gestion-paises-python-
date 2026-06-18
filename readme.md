@@ -52,3 +52,4 @@ python main.py
 
 ## Enlace al video
 
+https://youtu.be/cx_hTxH92C4
